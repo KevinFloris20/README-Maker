@@ -13,5 +13,5 @@ inquirer
     },
   ])
   .then(answers => {
-       fs.writeFileSync(currentPath+'/readme.md', answers.no);
+       fs.writeFileSync(currentPath+'/readme(test).md', answers.no);
   });
