@@ -43,144 +43,118 @@ SOFTWARE.";
 const choice = ["[![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs)", "[![GPLv3 License](https://img.shields.io/badge/License-GPL%20v3-yellow.svg)](https://opensource.org/licenses/)", "[![AGPL License](https://img.shields.io/badge/license-AGPL-blue.svg)](http://www.gnu.org/licenses/agpl-3.0)", "[![GitHub last commit](https://img.shields.io/github/last-commit/google/skia.svg?style=flat)]()"]
 
 //clear the files
-fs.writeFileSync(currentPath +'/readme(new).md', "");
+fs.writeFileSync(currentPath +'/result/readme(new).md', "");
 
 //append new info to file
 function append(input){
-  fs.appendFileSync(currentPath +'/readme(new).md', ss + input);
+  fs.appendFileSync(currentPath +'/result/readme(new).md', ss + input);
 }
 
-//ask questions
-// inquirer
-//   .prompt([
-//     // {
-//     //   type:"confirm",
-//     //   name:"confirm",
-//     //   message: "Create Your own readme file :D!!"
-//     // },
-//     // {
-//     //     type:"input",
-//     //     name: "prodName",
-//     //     message: "What is the name of your project?"//name
-//     // },
-//     //     {
-//     //     type:"input",
-//     //     name: "des",
-//     //     message: "Describe Your project:"//description
-//     // },
-//     // {
-//     //     type:"input",
-//     //     name: "install",
-//     //     message: "How do you install your project?"//installation
-//     // },
-//     // {
-//     //     type:"input",
-//     //     name: "use",
-//     //     message: "What do you use this project for?"//usage
-//     // },
-//     // {
-//     //     type:"input",
-//     //     name: "test",
-//     //     message: "How do you test this project?"//test
-//     // },
-//     // {
-//     //     type:"input",
-//     //     name: "cred",
-//     //     message: "Do you want to credit anyone?"//credit
-//     // },
-//     // {
-//     //   type:"confirm",
-//     //   name:"open",
-//     //   message: "Do you want your project to be open source?"//opensource
-//     // },
-//     // {
-//     //   type:"confirm",
-//     //   name:"lic",
-//     //   message: "Do you want a license for that?"//license
-//     // },
-//     // {
-//     //   type:"checkbox",
-//     //   name:"badge",
-//     //   message: "Which license badges would you like?",//badges
-//     //   choices: ["MIT License", "GPLv3 License", "AGPL License"]
-//     // },
+// ask questions
+inquirer
+  .prompt([
+    {
+      type:"confirm",
+      name:"confirm",
+      message: "Create Your own readme file :D!!"
+    },
+    {
+        type:"input",
+        name: "prodName",
+        message: "What is the name of your project?"//name
+    },
+        {
+        type:"input",
+        name: "des",
+        message: "Describe Your project:"//description
+    },
+    {
+        type:"input",
+        name: "install",
+        message: "How do you install your project?"//installation
+    },
+    {
+        type:"input",
+        name: "use",
+        message: "What do you use this project for?"//usage
+    },
+    {
+        type:"input",
+        name: "test",
+        message: "How do you test this project?"//test
+    },
+    {
+        type:"input",
+        name: "cred",
+        message: "Do you want to credit anyone?"//credit
+    },
+    {
+      type:"confirm",
+      name:"open",
+      message: "Do you want your project to be open source?"//opensource
+    },
+    {
+      type:"confirm",
+      name:"lic",
+      message: "Do you want a license for that?"//license
+    },
+    {
+      type:"checkbox",
+      name:"badge",
+      message: "Which license badges would you like?",//badges
+      choices: ["MIT License", "GPLv3 License", "AGPL License"]
+    },
+    {
+      type:"confirm",
+      name: "last",
+      message: "All done, go to the results folder to see your new readME file!! :)"//last question
+    }
 
   
-//   ])
-//   .then(answers => {//Append stuff
-//       //  //Name
-//       //  fs.appendFileSync("#" + answers.prodName + s);
+  ])
+  .then(answers => {//Append stuff
+    //Name
+    fs.appendFileSync(currentPath +'/result/readme(new).md', "# " + answers.prodName);
 
-//       //  //description
-//       //  append(answers.des)
+    //lic badge
+    if(answers.badge != null){
+      if(answers.badge[0] == true){
+        append(choice[answers.badge[0]])
+      }
+      if(answers.badge[1] == true){
+        append(choice[answers.badge[1]])
+      }
+      if(answers.badge[2] == true){
+        append(choice[answers.badge[2]])
+      } 
+    }
 
-//     // //lic badge
-//     //   if(answers.badge != null){
-//     //     append(choice[answer.badge.index])
-//     //   }
+    //description
+    append("## Description:" + ss + answers.des);
 
-//     // //license
-//     //   if(answers.lic == true){
-//     //     if(answers.open == true){
-//     //       append(license1);
-//     //     }
-//     //     else{
-//     //       append(license2);
-//     //     }
-//     //   }
-//   });
-  
+    //How to install
+    append("## Installation:" + ss + answers.install);
 
-//----------------------------------work space----------------------------------------
-//Name
-fs.appendFileSync(currentPath +'/readme(new).md', "# " + "Project name");
+    //Usage
+    append("## Usage:" + ss + answers.use);
 
-//lic badge
-if(true/*answers.badge != null*/){
-  append( choice[0])//answer.badge.index
-}
+    //tests
+    append("## Testing:" + ss + answers.test);
 
-//description
-append("## Description:" + ss + "Des");
+    //credit
+    append("## Credit:" + ss + answers.cred);
 
-//How to install
-append("## Installation:" + ss + "install");
-
-//Usage
-append("## Usage:" + ss + "usage");
-
-//tests
-append("## Testing:" + ss + "testtest");
-
-//credit
-append("## Credit:" + ss + "creddiittt");
-
-//license
-if(/*answers.lic == */true){
-  if(/*answers.open ==*/ true){
-    append("## Licence" + ss + license1);
-  }
-  else{
-    append("## Licence" + ss + license2);
-  }
-}
-
-
-//------------------------------------------------------------------------------------
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    //license
+    if(answers.lic == true){
+      if(answers.open == true){
+        append("## Licence" + ss + license1);
+      }
+      else{
+        append("## Licence" + ss + license2);
+      }
+    }
+      });
+      
 // * [Installation](#installation)
 // * [Usage](#usage)
 // * [Credits](#credits)
