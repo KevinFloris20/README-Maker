@@ -2,7 +2,7 @@
 
 ## Description:
 
-It creates a README file using terminal command lines. Its nice for a basic layout of a README
+It creates a README.md file using terminal command lines. Its nice for a basic layout of a README
 
 ## Installation:
 
