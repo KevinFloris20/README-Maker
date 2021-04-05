@@ -1,24 +1,24 @@
-# README Maker
+# Note Editor
 
 ## Description:
 
-It creates a README.md file using terminal command lines. Its nice for a basic layout of a README
+This simple note editor basically allows you to make notes for your schedule and list them in an organized way
 
 ## Installation:
 
-Need to install the FS package and the inquirer package to your downloaded files. You only really need the index.js file and a simple npm init
+Its doesnt really need to be deplouyed but if you want you just need the node modules and the required npm installs. This is deployed on heroku here: https://evening-oasis-72241.herokuapp.com/notes 
 
 ## Usage:
 
-Use this project for making your own custom README
+This app doesnt have a practical use for you reading this but its more for me so i can reference to when i wana. Also its a great base to build a really good note taker off of
 
 ## Testing:
 
-you can make your own test files(theres no test files)
+MYOT- make. your. own. test. (p.s its pretty legible so testing is unneeded)
 
 ## Credit:
 
-yes, myself :)
+Me, myself, and i *flips hair*
 
 ## Licence
 
