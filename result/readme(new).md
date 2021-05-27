@@ -1,24 +1,24 @@
-# Note Editor
+# EmployeeDirectory
 
 ## Description:
 
-This simple note editor basically allows you to make notes for your schedule and list them in an organized way
+This is a terminal employee directory app which allowes an admin to add, update, delete, employees, roles, and departments to the admins sql database
 
 ## Installation:
 
-Its doesnt really need to be deplouyed but if you want you just need the node modules and the required npm installs. This is deployed on heroku here: https://evening-oasis-72241.herokuapp.com/notes 
+You install node moduals and other dependancies 
 
 ## Usage:
 
-This app doesnt have a practical use for you reading this but its more for me so i can reference to when i wana. Also its a great base to build a really good note taker off of
+This project is used for managing the admins team through the terminal
 
 ## Testing:
 
-MYOT- make. your. own. test. (p.s its pretty legible so testing is unneeded)
+No test implimented 
 
 ## Credit:
 
-Me, myself, and i *flips hair*
+My self is to credit
 
 ## Licence
 
